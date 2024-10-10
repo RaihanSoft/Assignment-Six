@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peddy</title>
+    <link rel="shortcut icon" href="./images/logo.webp" type="image/x-icon">
+    <!-- !font family  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- !Tailwind and DaisyUi  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="/manifest.json">
+
+
+    <style>
+        .active-Btn {
+            background: rgba(14, 122, 129, 0.1);
+            border: 2px solid rgb(14, 122, 129);
+            border-radius: 120px;
+        }
+    </style>
+
+
+</head>
+
+<body style="font-family: Lato;">
+
+
+    <header>
+        <!-- ! navbar  -->
+        <nav class="flex w-11/12 mx-auto justify-between items-center py-4">
+     
+            <div class="flex items-center gap-2">
+                <div><img src="./images/logo.webp" alt="Logo"></div>
+                <h2 class="text-xl sm:text-3xl font-bold">Peddy</h2>
+            </div>
+        
+            <div class="hidden space-x-2 sm:space-x-5 md:flex">
+                <a class="font-semibold" href="#">Home</a>
+                <a class="font-semibold" href="#">Shop</a>
+                <a class="font-semibold" href="#">Contact</a>
+            </div>
+        
+      
+            <div>
+                <img class="border-2 p-2 rounded-full" src="https://img.icons8.com/?size=32&id=22396&format=png" alt="User Icon">
+            </div>
+      
+            
+            <button id="menu-toggle" class="md:hidden flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden flex flex-col space-y-2 mt-2 md:hidden bg-[#8eb6b9] text-white p-4 rounded">
+            <a class="block font-semibold" href="#">Home</a>
+            <a class="block font-semibold" href="#">Shop</a>
+            <a class="block font-semibold" href="#">Contact</a>
+        </div>
+        
+
+        
+        
+        <!-- ! navbar End -->
+
+        <!-- ! Hero Section  -->
+        <section class="w-11/12 mx-auto flex flex-col items-center mt-8 space-y-4">
+            <!-- * content div  -->
+            <div class=" text-center space-y-3 md:space-y-4">
+                <h3 class="text-2xl font-bold">Bringing Families Together ❤️‍🔥</h3>
+
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold"> Your Path to
+                    Adoption <br> Starts Here</h1>
+
+                <p class="font-normal">It is a long established fact that a reader will be distracted by the readable
+                    content of a page when looking <br> at its layout. The point of using Lorem Ipsum is that it has a.
+                </p>
+
+                <a href="#mainContainer">
+                    <div class="mt-5">
+                        <button
+                            class="btn bg-white border-[#0E7A81] text-[#0E7A81] text-lg hover:text-white hover:bg-[#0E7A81] ">View
+                            More</button>
+                    </div>
+                </a>
+            </div>
+            <!-- * image div  -->
+            <div>
+                <img src="./images/pet.webp" alt="">
+            </div>
+        </section>
+        <!-- ! Hero Section End -->
+    </header>
+
+    <main id="mainContainer" class="w-11/12 mx-auto ">
+        <section>
+            <!-- *! title  -->
+            <div class="text-center space-y-2">
+                <h2 class=" text-2xl sm:text-4xl font-extrabold">Adopt Your Best Friend</h2>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a <br> page
+                    when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+            <!-- *! title  -->
+
+            <!-- * title buttons -->
+            <div id="titleBtn" class="grid grid-cols-2 gap-4 lg:grid-cols-4 justify-items-center mt-10 ">
+            </div>
+            <!-- * title buttons ends -->
+
+            <!-- ! Best Deal For you starts -->
+            <div id="sort" class="mx-auto w-11/12 flex justify-between my-10 items-center">
+                <p class="text-2xl font-extrabold">Best Deal For you</p>
+                <p onclick="sort()"
+                    class="btn bg-white border-[#0E7A81] text-[#0E7A81] text-lg hover:text-white hover:bg-[#0E7A81]">
+                    Sort by Price</p>
+            </div>
+            <!-- ! Best Deal For you ends -->
+
+        </section>
+
+
+        <div id="adoptModal"
+            class="fixed z-10 inset-0 flex items-center justify-center bg-transparent pointer-events-none hidden backdrop-blur-sm">
+            <div class="bg-white p-10 rounded-xl shadow-lg pointer-events-auto ">
+
+                <div class="flex items-center justify-center flex-col space-y-4 ">
+                    <div class="h-20">
+                        <img class="h-full" src="./images/congrats.gif" alt="">
+                    </div>
+                    <h2 class="text-5xl font-extrabold">Congrats</h2>
+                    <p class="text-xl">Adoption Process is Start For Your Pet</p>
+                    <p id="countdown" class="text-6xl font-extrabold mt-4"><span id="timer">3</span></p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ! Best Deal For you card section  -->
+
+
+
+        <div id="modalContainer">
+
+
+
+        </div>
+
+
+        <section class="grid grid-cols-12 mt-5 mb-10 gap-2 lg:gap-6">
+
+            <!-- ! left side  -->
+
+            <div class="col-span-9">
+
+                <div id="allDataContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"> </div>
+
+                <!-- ! spinner -->
+                <div id="spin" class=" hidden flex-col items-center justify-center"> <span
+                        class="loading loading-bars loading-lg"></span></div>
+                <!-- ! spinner -->
+
+                <div class=" hidden  flex-col text-center items-center justify-center " id="error"><img
+                        src="./images/error.webp" alt="">
+                    <h3 class="text-4xl font-bold">No Information Available</h3>
+                    <p class="w-10/12 mx-auto">It is a long established fact that a reader will be distracted by the
+                        readable content of a page when looking at
+                        its layout. The point of using Lorem Ipsum is that it has a.</p>
+                </div>
+
+            </div>
+
+            </div>
+
+
+            <!-- !right side  -->
+
+            <div class="col-span-3">
+
+                <div id="likeContainer"
+                    class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center rounded-xl shadow-lg border-2 p-1 sm:p-3">
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ! Best Deal For you card section end -->
+
+
+        <!-- !  modal section -->
+
+
+
+    </main>
+
+
+    <footer class=" bg-[#131313] text-white p-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <div>
+
+                <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><img src="./images/logo.webp" alt="">Peddy
+                </h2>
+                <p>Location: Dhaka, Savar Charabag 54003</p>
+                <p>Phone: <a href="tel:+31859644725" class="text-blue-300 hover:underline">+88 01969365539</a></p>
+                <p>Email: <a href="mailto:info@yourdomain.com"
+                        class="text-blue-300 hover:underline">aboRaihan14@gmail.com</a></p>
+                <p>Opening hours: 9:00 AM - 5:00 PM</p>
+
+                <div class="flex space-x-4 mt-4">
+                    <a href="#"><img src="https://img.icons8.com/?size=48&id=118497&format=png" alt="Facebook"
+                            class="w-6 h-6"></a>
+                    <a href="#"><img src="https://img.icons8.com/?size=48&id=ZNMifeqJbPRv&format=png" alt="x"
+                            class="w-6 h-6"></a>
+                    <a href="#"><img src="https://img.icons8.com/?size=48&id=19318&format=png" alt="YouTube"
+                            class="w-6 h-6"></a>
+                    <a href="#"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"
+                            class="w-6 h-6"></a>
+                </div>
+
+
+            </div>
+
+
+            <div>
+                <h2 class="text-lg font-bold mb-4">Useful Links</h2>
+                <ul class="space-y-2">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Animals</a></li>
+                    <li><a href="#">Foundation</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h2 class="text-lg font-bold mb-4">Drop a Message</h2>
+                <form class="flex flex-col space-y-4">
+                    <input type="email" placeholder="Enter your email" class="input input-bordered w-full text-black"
+                        required>
+                    <button type="submit"
+                        class="btn bg-[#569095] border-[#0E7A81] text-black   text-lg hover:text-white hover:bg-[#0E7A81]">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="script.js"></script>
+    <script src="service-worker.js"></script>
+
+
+
+</body>
+
+</html>
