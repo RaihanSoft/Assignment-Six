@@ -17,22 +17,10 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/manifest.json">
 
 
 
- 
-        <link rel="manifest" href="/manifest.json">
-        <script>
-          if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/service-worker.js')
-                .then(reg => console.log('Service Worker Registered!', reg))
-                .catch(err => console.error('Service Worker registration failed', err));
-            });
-          }
-        </script>
-
-      
 
 
     <style>
@@ -48,7 +36,7 @@
 
 <body style="font-family: Lato;">
 
-    <button id="installBtn">Install App</button>
+    <button id="installBtn" style="display: none;">Install App</button>
 
 <script>
   let deferredPrompt;
@@ -58,24 +46,36 @@
     e.preventDefault();
     deferredPrompt = e;
     installBtn.style.display = 'block';
-    
-    installBtn.addEventListener('click', () => {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the install prompt');
-        } else {
-          console.log('User dismissed the install prompt');
-        }
-        deferredPrompt = null;
-      });
+  });
+
+  installBtn.addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
     });
   });
 
   window.addEventListener('appinstalled', () => {
-    console.log('App successfully installed');
+    console.log('App installed successfully');
   });
 </script>
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker Registered!', registration);
+        })
+        .catch((error) => {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+  
 
 
 

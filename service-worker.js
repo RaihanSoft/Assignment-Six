@@ -1,21 +1,14 @@
-const CACHE_NAME = 'my-app-cache';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/css/tailwind.css',
-  '/js/app.js'
-];
+const CACHE_NAME = 'pwa-cache';
+const urlsToCache = ['/', '/index.html', '/css/style.css', '/js/app.js'];
 
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
   );
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
+    caches.match(event.request).then((response) => response || fetch(event.request))
   );
 });
