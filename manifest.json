@@ -1,11 +1,10 @@
 {
-    "name": "My Random PWA App",
-    "short_name": "RandomPWA",
-    "description": "A sample Progressive Web App with random details.",
+    "name": "My PWA",
+    "short_name": "Peddy",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#f0f0f0",
-    "theme_color": "#333333",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
     "icons": [
       {
         "src": "https://via.placeholder.com/192.png",
@@ -15,13 +14,6 @@
       {
         "src": "https://via.placeholder.com/512.png",
         "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "screenshots": [
-      {
-        "src": "https://via.placeholder.com/640x480.png",
-        "sizes": "640x480",
         "type": "image/png"
       }
     ]
